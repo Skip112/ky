@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Панель администратора</h1>
+    <p>Добро пожаловать, {{ user.username }}!</p>
+    <h1><a href="{% url 'admin_dashboard' %}">Редактировать пользователей</a></h1>
+    <ul>
+        <li><a href="{% url 'admin:index' %}">Django Admin</a></li>
+        <li><a href="{% url 'forum' %}">Форум</a></li>
+        <li><a href="{% url 'logout' %}">Выйти</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Выдать права администратора</title>
+</head>
+<body>
+    <h1>Выдать права администратора для {{ user_obj.username }}</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {% if not user.is_superuser %}
+        <button type="submit">Выдать права администратора</button>
+        {% else %}
+        <button type="submit">Забрать права администратора</button>
+        {% endif %}
+    </form>
+
+    <a href="{% url 'admin_dashboard' %}">Назад в админ панель</a>
+</body>
+</html>

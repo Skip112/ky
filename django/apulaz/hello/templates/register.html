@@ -1,0 +1,24 @@
+<form method="POST">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    {% csrf_token %}
+    <input type="username" name="username" placeholder="Введите юзер" required>
+    <input type="email" name="email" placeholder="Введите email" required>
+    <input type="password" name="password" placeholder="Введите пароль" required>
+    <button type="submit">Зарегистрироваться</button>
+    <br />
+    <a href="http://127.0.0.1:8000/hello/login/"> Есть аккаунт? Вход</a>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+

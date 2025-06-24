@@ -1,0 +1,10 @@
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<a href="{% url 'logout' %}">Выйти</a>
+<h1>Создать тему</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Создать</button>
+</form>

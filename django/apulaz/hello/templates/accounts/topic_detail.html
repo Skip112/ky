@@ -1,0 +1,21 @@
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<a href="{% url 'logout' %}">Выйти</a>
+<h1>{{ topic.title }}</h1>
+<p>Автор: {{ topic.author.username }}</p>
+<p>Создана: {{ topic.created_at }}</p>
+
+<h2>Сообщения:</h2>
+<ul>
+    {% for post in posts %}
+    <li>{{ post.author.username }}: {{ post.content }} ({{ post.created_at }})</li>
+    {% endfor %}
+</ul>
+
+<h2>Добавить сообщение</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ post_form.as_p }}
+    <button type="submit">Отправить</button>
+</form>

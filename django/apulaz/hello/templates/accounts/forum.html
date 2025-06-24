@@ -1,0 +1,20 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<p>Вы вошли как {{ user.username }}</p>
+<a href="{% url 'logout' %}">Выйти</a>
+
+{% if user.is_superuser %}
+<p><a href="{% url 'admin_utilites' %}">Перейти в админ-панель</a></p>
+{% endif %}
+
+<h1>Форум</h1>
+<a href="{% url 'create_topic' %}">Создать тему</a>
+<ul>
+    {% for topic in topics %}
+    <li>
+        <a href="{% url 'topic_detail' topic.id %}">{{ topic.title }}</a>
+        (автор: {{ topic.author.username }}, дата: {{ topic.created_at }})
+    </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Заблокировать пользователя</title>
+</head>
+<body>
+    <h1>Заблокировать пользователя {{ user_obj.username }}</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="days">Количество дней блокировки:</label>
+        <input type="number" id="days" name="days" min="1" required>
+        <button type="submit">Заблокировать</button>
+    </form>
+
+    <a href="{% url 'admin_dashboard' %}">Отмена</a>
+</body>
+</html>

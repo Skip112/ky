@@ -1,0 +1,101 @@
+/* Основной стиль для всех страниц */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Формы */
+input[type="email"], input[type="password"], input[type="username"], input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid rgb(252, 135, 8);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Стиль кнопок */
+button {
+    background-color: rgb(252, 135, 8);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover {
+        background-color: #e86d00;
+    }
+
+
+
+/* Стили для заголовков */
+h1, h2 {
+    color: rgb(252, 135, 8);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #555;
+}
+
+/* Ссылки */
+a {
+    color: rgb(252, 135, 8);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    a:hover {
+        color: #e86d00;
+        text-decoration: underline;
+    }
+
+
+
+form {
+    display: inline-block;
+    padding: 20px;
+    border: 1px solid rgb(252, 135, 8);
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+/* Стили для списка тем и сообщений */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgb(252, 135, 8);
+    border-radius: 5px;
+    text-align: left;
+}
+
+/* Стиль для logout ссылки */
+.logout-link {
+    float: right;
+    margin-right: 20px;
+    font-size: 14px;
+    color: rgb(252, 135, 8);
+}
+
+    .logout-link:hover {
+        color: #e86d00;
+    }
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+    input[type="email"], input[type="password"], input[type="username"], input[type="text"] {
+        width: 100%;
+    }
+}

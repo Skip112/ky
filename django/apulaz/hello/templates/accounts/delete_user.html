@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Удаление пользователя</title>
+</head>
+<body>
+    <h1>Удалить пользователя {{ user_obj.username }}?</h1>
+    <p>Вы уверены, что хотите удалить этого пользователя? Это действие нельзя отменить.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Удалить</button>
+    </form>
+
+    <a href="{% url 'admin_dashboard' %}">Отмена</a>
+</body>
+</html>
